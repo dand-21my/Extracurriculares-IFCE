@@ -11,24 +11,24 @@ struct MainView: View {
     var body: some View {
         TabView {
             
-            Tab("Atividades", systemImage: "book") {
+                Tab("Atividades", systemImage: "book") {
+                    
+                    InicialView()
+                }
                 
-                InicialView()
-            }
-            
-            Tab("locais", systemImage: "map") {
-                
-                locaisView()
-            }
-            Tab("interesses", systemImage: "heart") {
-                
-                interessesView()
+                Tab("locais", systemImage: "map") {
+                    
+                    LocaisView()
+                }
+                Tab("interesses", systemImage: "heart") {
+                    
+                    interessesView()
+                }
             }
         }
     }
-    
-    
-}
+
+
 
 
 #Preview {
