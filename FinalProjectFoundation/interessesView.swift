@@ -9,7 +9,24 @@ import SwiftUI
 
 struct interessesView: View {
     var body: some View {
-       
+        NavigationStack {
+            
+            
+            ZStack {
+                
+                Color.verdeback
+                    .ignoresSafeArea()
+                
+                
+                
+                VStack {
+                     
+                  
+                    Spacer()
+                }
+            }
+            .navigationTitle("interesses")
+        }
     }
 }
 
