@@ -25,12 +25,17 @@ struct InicialView: View {
                         .padding(.vertical,4)
                 }
                 
+
+
  feature/conexoes
-                NavigationLink(destination: ArteCulturaView()) { // AQUI está a mudança!
+
+              NavigationLink(destination: ArteCulturaView()) { // AQUI está a mudança!
                    Text("Cultura/Arte")
                     
                 }
+
 main
+
             }
             .navigationTitle("Atividades")
             .scrollContentBackground(.hidden)
