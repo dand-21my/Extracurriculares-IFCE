@@ -18,17 +18,17 @@ struct MainView: View {
                 InicialView()
             }
             
-            Tab("locais", systemImage: "map") {
+            Tab("Locais", systemImage: "map") {
                 
                 LocaisView()
             }
-            Tab("interesses", systemImage: "heart") {
+            Tab("Interesses", systemImage: "heart") {
                 
                 interessesView()
                 
             }
         }
-        .tint(.pink)
+        .tint(.green)
        
     }
 }

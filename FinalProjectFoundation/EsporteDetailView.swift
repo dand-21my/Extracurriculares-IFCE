@@ -21,18 +21,42 @@ struct EsporteDetailView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 
-                Text("Orientador").bold()
-                Text(esporte.orientador)
-                Text("Local").bold()
-                Text(esporte.local)
-                Text("Dias").bold()
-                Text(esporte.dias)
-                Text("Horário").bold()
-                Text(esporte.horario)
-                Text("Ensino").bold()
-                Text(esporte.ensino)
-                Text("Contato").bold()
-                Text(esporte.contato)
+              
+            }
+            .listRowSeparator(.hidden)
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(.green)
+                VStack(alignment: .leading) {
+                    Text("Orientador").bold()
+                    Text(esporte.orientador)
+                    
+                    Divider()
+                    
+                    Text("Local").bold()
+                    Text(esporte.local)
+                    
+                    Divider()
+                    
+                    Text("Dias").bold()
+                    Text(esporte.dias)
+                    
+                    Divider()
+                    
+                    Text("Horário").bold()
+                    Text(esporte.horario)
+                    
+                    Divider()
+                    
+                    Text("Ensino").bold()
+                    Text(esporte.ensino)
+                    
+                    Divider()
+                    
+                    Text("Contato").bold()
+                    Text(esporte.contato)
+                }
+                .padding()
             }
             .listRowSeparator(.hidden)
         }
