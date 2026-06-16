@@ -18,14 +18,14 @@ struct InicialView: View {
                         .padding(.vertical,4)
                 }
                 
-                NavigationLink(destination: CulturaArteView())
+                NavigationLink(destination: ArteCulturaView())
                 {
                     Text("Cultura/Arte")
                         .font(.body)
                         .padding(.vertical,4)
                 }
                 
-                NavigationLink(destination: CulturaArteView()) { // AQUI está a mudança!
+                NavigationLink(destination: ArteCulturaView()) { // AQUI está a mudança!
                    Text("Cultura/Arte")
                     
                 }
