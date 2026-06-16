@@ -6,19 +6,42 @@
 //
 
 import SwiftUI
+import SwiftData
+import SwiftDataSQLite
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            
+            Tab("Atividades", systemImage: "book") {
+                
+                InicialView()
+            }
+            
+            Tab("locais", systemImage: "map") {
+                
+                LocaisView()
+            }
+            Tab("interesses", systemImage: "heart") {
+                
+                interessesView()
+                
+            }
         }
-        .padding()
+        .tint(.pink)
+       
     }
 }
 
+
 #Preview {
     MainView()
+        .modelContainer(
+            for: [Esporte.self, ArteCultura.self, Locais.self],
+            inMemory: true,
+            sqliteDatabasePath: Bundle.main.path(
+                forResource: "db",
+                ofType: "sqlite"
+            )!
+        )
 }
