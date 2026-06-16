@@ -14,7 +14,7 @@ struct FinalProjectFoundationApp: App {
         WindowGroup {
             MainView()
                 .modelContainer(
-                    for: [Locais.self, Esporte.self], // Agora inclui Esporte.self
+                    for: [Locais.self, Esporte.self, ArteCultura.self], // Agora inclui Esporte.self
                     inMemory: true,
                     sqliteDatabasePath: Bundle.main.path(
                         forResource: "db",
