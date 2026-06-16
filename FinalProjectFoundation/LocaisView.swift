@@ -17,18 +17,25 @@ struct LocaisView: View {
         NavigationStack {
             List {
                 ForEach(locais) { local in
-
-                        LocalRowView(local: local)
-                    .padding(9)
-                    .background(
-                        RoundedRectangle(cornerRadius:34)
-                            .stroke(Color.primary.opacity(1))
-                    )
-                    .listRowSeparator(.hidden)
+                    LocalRowView(local: local)
+                        .padding(9)
+                        .background(
+                            RoundedRectangle(cornerRadius:34)
+                                .stroke(Color.primary.opacity(1))
+                                .background(Color.white)
+                                
+                        )
+                        .listRowSeparator(.hidden)
+                        
                 }
             }
             .listStyle(.plain)
             .navigationTitle("Conheça o IF")
+            
+            
+            .scrollContentBackground(.hidden)
+            .background(Color.verdeback)
+            
         }
     }
 }
