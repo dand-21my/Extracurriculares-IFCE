@@ -31,11 +31,11 @@ struct EsportesView: View {
 #Preview {
     EsportesView()
         .modelContainer(
-                   for: [Esporte.self],
-                   inMemory: true,
-                   sqliteDatabasePath: Bundle.main.path(
-                       forResource: "db",
-                       ofType: "sqlite"
-                   )!
+            for: [Esporte.self],
+            inMemory: true,
+            sqliteDatabasePath: Bundle.main.path(
+                forResource: "db",
+                ofType: "sqlite"
+            )!
         )
 }
