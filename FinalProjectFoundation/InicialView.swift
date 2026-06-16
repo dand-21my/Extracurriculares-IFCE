@@ -26,10 +26,15 @@ struct InicialView: View {
                 }
                 
 
-                NavigationLink(destination: ArteCulturaView()) { // AQUI está a mudança!
+
+ feature/conexoes
+
+              NavigationLink(destination: ArteCulturaView()) { // AQUI está a mudança!
                    Text("Cultura/Arte")
                     
                 }
+
+main
 
             }
             .navigationTitle("Atividades")
