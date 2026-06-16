@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftData
+import SwiftDataSQLite
 
 struct MainView: View {
     var body: some View {
@@ -34,4 +36,12 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .modelContainer(
+            for: [Esporte.self, ArteCultura.self, Locais.self],
+            inMemory: true,
+            sqliteDatabasePath: Bundle.main.path(
+                forResource: "db",
+                ofType: "sqlite"
+            )!
+        )
 }
