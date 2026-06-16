@@ -20,25 +20,46 @@ struct ArteCulturaDetailView: View {
                     .frame(width:360, height: 250)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
-                
-                Text("Orientador").bold()
-                Text(arteCultura.orientador)
-                Text("Local").bold()
-                Text(arteCultura.local)
-                Text("Dias").bold()
-                Text(arteCultura.dias)
-                Text("Horário").bold()
-                Text(arteCultura.horario)
-                Text("Ensino").bold()
-                Text(arteCultura.ensino)
-                Text("Contato").bold()
-                Text(arteCultura.contato)
             }
             .listRowSeparator(.hidden)
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(.green)
+                VStack(alignment: .leading) {
+                    Text("Orientador").bold()
+                    Text(arteCultura.orientador)
+                    
+                    Divider()
+                    
+                    Text("Local").bold()
+                    Text(arteCultura.local)
+                    
+                    Divider()
+                    
+                    Text("Dias").bold()
+                    Text(arteCultura.dias)
+                    
+                    Divider()
+                    
+                    Text("Horário").bold()
+                    Text(arteCultura.horario)
+                    
+                    Divider()
+                    
+                    Text("Ensino").bold()
+                    Text(arteCultura.ensino)
+                    
+                    Divider()
+                    
+                    Text("Contato").bold()
+                    Text(arteCultura.contato)
+                }
+                .padding()
+            }
+            
+            .listStyle(.plain)
+            .navigationTitle(arteCultura.nome)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        
-        .listStyle(.plain)
-        .navigationTitle(arteCultura.nome)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
