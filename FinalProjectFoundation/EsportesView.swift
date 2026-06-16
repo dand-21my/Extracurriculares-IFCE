@@ -22,6 +22,8 @@ struct EsportesView: View {
                 }
             }
             .navigationTitle("Esportes")
+            .scrollContentBackground(.hidden)
+            .background(Color.verdeback)     
         }
     }
 }

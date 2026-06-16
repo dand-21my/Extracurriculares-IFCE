@@ -6,6 +6,7 @@
 //
 import SwiftDataSQLite
 import SwiftUI
+import SwiftData // Importar SwiftData
 
 @main
 struct FinalProjectFoundationApp: App {
@@ -13,7 +14,7 @@ struct FinalProjectFoundationApp: App {
         WindowGroup {
             MainView()
                 .modelContainer(
-                    for: [Locais.self],
+                    for: [Locais.self, Esporte.self], // Agora inclui Esporte.self
                     inMemory: true,
                     sqliteDatabasePath: Bundle.main.path(
                         forResource: "db",

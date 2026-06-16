@@ -14,10 +14,13 @@ struct EsporteDetailView: View {
     
     var body: some View {
         List {
+            Section {
                 Image(uiImage: UIImage(data: esporte.foto)!)
-                .resizable()
-                .frame(width:360, height: 250)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .resizable()
+                    .frame(width:360, height: 250)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                
+                
                 Text("Orientador").bold()
                 Text(esporte.orientador)
                 Text("Local").bold()
@@ -31,6 +34,8 @@ struct EsporteDetailView: View {
                 Text("Contato").bold()
                 Text(esporte.contato)
             }
+            .listRowSeparator(.hidden)
+        }
         
         .listStyle(.plain)
         .navigationTitle(esporte.nome)

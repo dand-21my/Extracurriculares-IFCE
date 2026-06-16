@@ -11,11 +11,18 @@ struct InicialView: View {
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink(destination: Text("Esportes")) {
+                NavigationLink(destination: EsportesView())
+                {
                     Text("Esporte")
                         .font(.body)
                         .padding(.vertical,4)
-                    
+                }
+                
+                NavigationLink(destination: CulturaArteView())
+                {
+                    Text("Cultura/Arte")
+                        .font(.body)
+                        .padding(.vertical,4)
                 }
                 
                 NavigationLink(destination: CulturaArteView()) { // AQUI está a mudança!
@@ -24,8 +31,6 @@ struct InicialView: View {
                 }
             }
             .navigationTitle("Atividades")
-            
-            
             .scrollContentBackground(.hidden)
             .background(Color.verdeback)
         }
