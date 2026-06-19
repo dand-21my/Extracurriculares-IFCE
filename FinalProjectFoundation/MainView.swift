@@ -27,7 +27,12 @@ struct MainView: View {
                 interessesView()
                 
             }
+<<<<<<< HEAD
         }         .tint(.green)
+=======
+        }
+        .tint(.green)
+>>>>>>> main
        
     }
 }
@@ -37,7 +42,11 @@ struct MainView: View {
     MainView()
         .modelContainer(
             for: [Esporte.self, ArteCultura.self, Locais.self],
+<<<<<<< HEAD
             inMemory: false,
+=======
+            inMemory: true,
+>>>>>>> main
             sqliteDatabasePath: Bundle.main.path(
                 forResource: "db",
                 ofType: "sqlite"

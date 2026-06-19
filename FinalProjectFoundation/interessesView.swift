@@ -79,10 +79,15 @@ struct interessesView: View {
                     }
                     
                 }
+<<<<<<< HEAD
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
                 .background(Color.clear)            }
             .navigationTitle("Meus interesses")
+=======
+            }
+            .navigationTitle("Interesses")
+>>>>>>> main
         }
     }
 }
