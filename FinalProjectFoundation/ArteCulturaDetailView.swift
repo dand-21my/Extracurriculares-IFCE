@@ -10,7 +10,7 @@ import SwiftData
 import SwiftDataSQLite
 
 struct ArteCulturaDetailView: View {
-    let arteCultura: ArteCultura
+    var arteCultura: ArteCultura
     
     var body: some View {
         List {
@@ -60,6 +60,17 @@ struct ArteCulturaDetailView: View {
             .listStyle(.plain)
             .navigationTitle(arteCultura.nome)
             .navigationBarTitleDisplayMode(.inline)
+        }
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button(
+                    "Favoritar",
+                    systemImage: (arteCultura.isFavorite ?? false) ? "heart.fill": "heart"
+                ) {
+                    arteCultura.isFavorite?.toggle()
+                    
+                }
+            }
         }
     }
 }

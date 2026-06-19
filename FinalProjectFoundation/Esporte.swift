@@ -21,7 +21,7 @@ class Esporte: Identifiable {
     var ensino: String
     var contato: String
     var foto: Data
-    var isFavorito: Bool // Adicione esta linha
+    var isFavorite: Bool?
 
     init(
         id: Int,
@@ -33,7 +33,7 @@ class Esporte: Identifiable {
         ensino: String,
         contato: String,
         foto: Data,
-        isFavorito: Bool = false // Adicione o parâmetro no init
+        isFavorite: Bool? = nil
     ) {
         self.id = id
         self.nome = nome
@@ -44,6 +44,6 @@ class Esporte: Identifiable {
         self.ensino = ensino
         self.contato = contato
         self.foto = foto
-        self.isFavorito = isFavorito
-    } 
+        self.isFavorite = isFavorite
+    }
 }
