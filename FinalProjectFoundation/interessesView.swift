@@ -25,7 +25,7 @@ struct interessesView: View {
                     Spacer()
                 }
             }
-            .navigationTitle("interesses")
+            .navigationTitle("Interesses")
         }
     }
 }
