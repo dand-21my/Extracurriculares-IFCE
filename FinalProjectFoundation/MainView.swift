@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftData
+import SwiftDataSQLite
 
 struct MainView: View {
     var body: some View {
@@ -16,17 +18,16 @@ struct MainView: View {
                 InicialView()
             }
             
-            Tab("locais", systemImage: "map") {
+            Tab("Locais", systemImage: "map") {
                 
                 LocaisView()
             }
-            Tab("interesses", systemImage: "heart") {
+            Tab("Interesses", systemImage: "heart") {
                 
                 interessesView()
                 
             }
-        }
-        .tint(.pink)
+        }         .tint(.green)
        
     }
 }
@@ -34,4 +35,12 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .modelContainer(
+            for: [Esporte.self, ArteCultura.self, Locais.self],
+            inMemory: false,
+            sqliteDatabasePath: Bundle.main.path(
+                forResource: "db",
+                ofType: "sqlite"
+            )!
+        )
 }

@@ -1,18 +1,18 @@
 //
-//  Esporte.swift
+//  ArteCultura.swift
 //  FinalProjectFoundation
 //
-//  Created by Found on 09/06/26.
+//  Created by Found on 16/06/26.
 //
 
 import SwiftUI
 import SwiftData
 import SwiftDataSQLite
 
-@SQLiteTable("Esportes")
+@SQLiteTable("ArteCultura")
 @Model
-class Esporte: Identifiable {
-    var id: Int
+class ArteCultura: Identifiable {
+    var id: String
     var nome: String
     var orientador: String
     var local: String
@@ -21,10 +21,10 @@ class Esporte: Identifiable {
     var ensino: String
     var contato: String
     var foto: Data
-    var isFavorite: Bool?
+    var isFavorite : Bool?
 
     init(
-        id: Int,
+        id: String,
         nome: String,
         orientador: String,
         local: String,

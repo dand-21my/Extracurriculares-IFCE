@@ -1,81 +1,76 @@
 //
-//  EsporteDetailView.swift
+//  ArteCulturaDetailView.swift
 //  FinalProjectFoundation
 //
-//  Created by Found on 09/06/26.
+//  Created by Found on 16/06/26.
 //
 
 import SwiftUI
 import SwiftData
 import SwiftDataSQLite
 
-struct EsporteDetailView: View {
-    var esporte: Esporte
+struct ArteCulturaDetailView: View {
+    var arteCultura: ArteCultura
     
     var body: some View {
         List {
             Section {
-                Image(uiImage: UIImage(data: esporte.foto)!)
+                Image(uiImage: UIImage(data: arteCultura.foto)!)
                     .resizable()
                     .frame(width:360, height: 250)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
-                
-              
             }
             .listRowSeparator(.hidden)
             ZStack(alignment: .leading) {
-                
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(.green)
                 VStack(alignment: .leading) {
                     Text("Orientador").bold()
-                    Text(esporte.orientador)
+                    Text(arteCultura.orientador)
                     
                     Divider()
                     
                     Text("Local").bold()
-                    Text(esporte.local)
+                    Text(arteCultura.local)
                     
                     Divider()
                     
                     Text("Dias").bold()
-                    Text(esporte.dias)
+                    Text(arteCultura.dias)
                     
                     Divider()
                     
                     Text("Horário").bold()
-                    Text(esporte.horario)
+                    Text(arteCultura.horario)
                     
                     Divider()
                     
                     Text("Ensino").bold()
-                    Text(esporte.ensino)
+                    Text(arteCultura.ensino)
                     
                     Divider()
                     
                     Text("Contato").bold()
-                    Text(esporte.contato)
+                    Text(arteCultura.contato)
                 }
                 .padding()
             }
-            .listRowSeparator(.hidden)
+            
+            .listStyle(.plain)
+            .navigationTitle(arteCultura.nome)
+            .navigationBarTitleDisplayMode(.inline)
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(
                     "Favoritar",
-                    systemImage: (esporte.isFavorite ?? false) ? "heart.fill": "heart"
+                    systemImage: (arteCultura.isFavorite ?? false) ? "heart.fill": "heart"
                 ) {
-                    print(esporte.isFavorite)
-                    esporte.isFavorite?.toggle()
+                    arteCultura.isFavorite?.toggle()
                     
                 }
             }
         }
-        
-        .listStyle(.plain)
-        .navigationTitle(esporte.nome)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }

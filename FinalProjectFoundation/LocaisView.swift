@@ -10,32 +10,35 @@ import SwiftData
 import SwiftDataSQLite
 
 struct LocaisView: View {
-
+    
     @Query var locais: [Locais]
-
+    
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(locais) { local in
-                    LocalRowView(local: local)
-                        .padding(9)
-                        .background(
-                            RoundedRectangle(cornerRadius:34)
-                                .stroke(Color.primary.opacity(1))
-                                .background(Color.white)
+            ZStack {
+                Color.verdeback
+                    .ignoresSafeArea()
+                
+                List {
+                    ForEach(locais) { local in
+                        LocalRowView(local: local)
+                            .padding(9)
+                            .background(
+                                RoundedRectangle(cornerRadius:34)
+                                    .stroke(Color.primary.opacity(1))
+                                    .background(Color.white)
                                 
-                        )
-                        .listRowSeparator(.hidden)
+                            )
+                            .listRowSeparator(.hidden)
+                           
+                            .listRowBackground(Color.clear)
                         
+                    }
                 }
-            }
-            .listStyle(.plain)
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)            }
             .navigationTitle("Conheça o IF")
-            
-            
-            .scrollContentBackground(.hidden)
-            .background(Color.verdeback)
-            
         }
     }
 }
