@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  FinalProjectFoundation
 //
 //  Created by Beatriz Leonel on 28/05/26.
@@ -12,28 +12,26 @@ import SwiftDataSQLite
 struct MainView: View {
     var body: some View {
         TabView {
-            
             Tab("Atividades", systemImage: "book") {
-                
                 InicialView()
             }
             
             Tab("Locais", systemImage: "map") {
-                
                 LocaisView()
             }
+            
             Tab("Interesses", systemImage: "heart") {
-                
                 interessesView()
-                
+            }
+            
+            
+            Tab("Pesquisar", systemImage: "magnifyingglass") {
+                SearchView()
             }
         }
         .tint(.green)
-
-       
     }
 }
-
 
 #Preview {
     MainView()

@@ -6,15 +6,14 @@
 //
 import SwiftDataSQLite
 import SwiftUI
-import SwiftData // Importar SwiftData
-
+import SwiftData
 @main
 struct FinalProjectFoundationApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
                 .modelContainer(
-                    for: [Locais.self, Esporte.self, ArteCultura.self], // Agora inclui Esporte.self
+                    for: [Locais.self, Esporte.self, ArteCultura.self], 
                     inMemory: true,
                     sqliteDatabasePath: Bundle.main.path(
                         forResource: "db",
