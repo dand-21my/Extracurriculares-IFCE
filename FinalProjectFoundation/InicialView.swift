@@ -24,7 +24,6 @@ struct InicialView: View {
                         .font(.body)
                         .padding(.vertical,4)
                 }
-                
             }
             .navigationTitle("Atividades")
             .scrollContentBackground(.hidden)

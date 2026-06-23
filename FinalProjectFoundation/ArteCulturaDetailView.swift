@@ -10,9 +10,8 @@ import SwiftData
 import SwiftDataSQLite
 
 struct ArteCulturaDetailView: View {
-    let arteCultura: ArteCultura
-    
-    var body: some View {
+    var arteCultura: ArteCultura
+        var body: some View {
         List {
             Section {
                 Image(uiImage: UIImage(data: arteCultura.foto)!)
@@ -61,5 +60,19 @@ struct ArteCulturaDetailView: View {
             .navigationTitle(arteCultura.nome)
             .navigationBarTitleDisplayMode(.inline)
         }
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button(
+                    "Favoritar",
+                    systemImage: (arteCultura.isFavorite ?? false) ? "heart.fill": "heart"
+                ) {
+                    arteCultura.isFavorite?.toggle()
+                    
+                }
+            }
+        }
+        .listStyle(.plain)
+       .scrollContentBackground(.hidden)
+           .background(Color.verdeback)
     }
 }

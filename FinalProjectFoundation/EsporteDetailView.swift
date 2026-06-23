@@ -3,8 +3,9 @@ import SwiftData
 import SwiftDataSQLite
 
 struct EsporteDetailView: View {
-    let esporte: Esporte
- 
+    
+    @Bindable var esporte: Esporte
+    
     var body: some View {
         List {
             Section {
@@ -38,24 +39,33 @@ struct EsporteDetailView: View {
                     Text(esporte.contato)
                 }
                 .padding()
+                
+                .listRowSeparator(.hidden)
             }
-            .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .navigationTitle(esporte.nome)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    esporte.isFavorito.toggle()
-                    if esporte.isFavorito {
-                       
-                    }
-                } label: {
-                    Image(systemName: esporte.isFavorito ? "heart.fill" : "heart")
-                        .foregroundStyle(esporte.isFavorito ? .green : .gray)
+            .toolbar {
+
                 }
             }
+            .listStyle(.plain)
+            .navigationTitle(esporte.nome)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        esporte.isFavorite?.toggle()
+                        if esporte.isFavorite == true {
+                            
+                        }
+                    }
+                    label: {
+                        Image(systemName: esporte.isFavorite ?? false ? "heart.fill" : "heart")
+                            .foregroundStyle(esporte.isFavorite ?? false ? .green : .gray)
+                    }
+                         }
+                }
+         .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+            .background(Color.verdeback)
+            }
         }
-    }
-}
+    

@@ -21,6 +21,7 @@ class ArteCultura: Identifiable {
     var ensino: String
     var contato: String
     var foto: Data
+    var isFavorite : Bool?
 
     init(
         id: String,
@@ -31,7 +32,8 @@ class ArteCultura: Identifiable {
         horario: String,
         ensino: String,
         contato: String,
-        foto: Data
+        foto: Data,
+        isFavorite: Bool? = nil
     ) {
         self.id = id
         self.nome = nome
@@ -42,5 +44,6 @@ class ArteCultura: Identifiable {
         self.ensino = ensino
         self.contato = contato
         self.foto = foto
+        self.isFavorite = isFavorite
     }
 }
