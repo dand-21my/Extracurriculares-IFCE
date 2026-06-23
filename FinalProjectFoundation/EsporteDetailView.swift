@@ -48,7 +48,6 @@ struct EsporteDetailView: View {
                         "Favoritar",
                         systemImage: (esporte.isFavorite ?? false) ? "heart.fill": "heart"
                     ) {
-                        print(esporte.isFavorite)
                         esporte.isFavorite?.toggle()
                         
                     }
