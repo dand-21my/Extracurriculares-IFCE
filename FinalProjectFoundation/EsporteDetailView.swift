@@ -43,14 +43,7 @@ struct EsporteDetailView: View {
                 .listRowSeparator(.hidden)
             }
             .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    Button(
-                        "Favoritar",
-                        systemImage: (esporte.isFavorite ?? false) ? "heart.fill": "heart"
-                    ) {
-                        esporte.isFavorite?.toggle()
-                        
-                    }
+
                 }
             }
             .listStyle(.plain)
@@ -63,12 +56,16 @@ struct EsporteDetailView: View {
                         if esporte.isFavorite == true {
                             
                         }
-                    } label: {
+                    }
+                    label: {
                         Image(systemName: esporte.isFavorite ?? false ? "heart.fill" : "heart")
                             .foregroundStyle(esporte.isFavorite ?? false ? .green : .gray)
                     }
+                         }
                 }
+         .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+            .background(Color.verdeback)
             }
         }
-    }
-}
+    

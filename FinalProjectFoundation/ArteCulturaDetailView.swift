@@ -11,8 +11,7 @@ import SwiftDataSQLite
 
 struct ArteCulturaDetailView: View {
     var arteCultura: ArteCultura
-    
-    var body: some View {
+        var body: some View {
         List {
             Section {
                 Image(uiImage: UIImage(data: arteCultura.foto)!)
@@ -72,5 +71,8 @@ struct ArteCulturaDetailView: View {
                 }
             }
         }
+        .listStyle(.plain)
+       .scrollContentBackground(.hidden)
+           .background(Color.verdeback)
     }
 }
